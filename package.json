@@ -1,0 +1,28 @@
+{
+  "name": "node-travis-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndreasGassmann/node-travis-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreasGassmann/node-travis-test/issues"
+  },
+  "homepage": "https://github.com/AndreasGassmann/node-travis-test",
+  "devDependencies": {
+    "istanbul": "^0.3.15",
+    "mocha": "^2.2.5"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+  }
+}
